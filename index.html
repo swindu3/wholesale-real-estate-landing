@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Maryland House Fast - Cash Offer in 24 Hours</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="mainNavbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-home"></i>
+                <span>Maryland House Buyers</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="typeform-section" id="typeformSection">
+        <button class="form-exit-btn" id="formExitBtn" title="Exit form and browse site">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="typeform-container">
+            <div class="trust-banner">
+                <div class="trust-items">
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% No Obligation</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-clock"></i>
+                        <span>24hr Response</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-star"></i>
+                        <span>500+ Happy Sellers</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            
+            <div class="step-counter">
+                <span class="current-step">1</span> / <span class="total-steps">6</span>
+            </div>
+            
+            <form id="multiStepForm" class="multi-step-form">
+                <div class="form-step active" data-step="1">
+                    <div class="step-content">
+                        <h2>What's the address of your property?</h2>
+                        <p class="step-subtitle">Let's start with the basics</p>
+                        <div class="input-group">
+                            <input type="text" id="address" name="address" placeholder="Enter your property address" required autofocus>
+                            <div class="input-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="validation-message" id="address-validation"></div>
+                        </div>
+                        <div class="form-row address-details" style="display: none;">
+                            <input type="text" id="city" name="city" placeholder="City" required>
+                            <input type="text" id="zipcode" name="zipcode" placeholder="ZIP Code" required>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button type="button" class="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <div class="step-content">
+                        <h2>What's the condition of your property?</h2>
+                        <p class="step-subtitle">This helps us provide an accurate offer</p>
+                        <div class="condition-grid">
+                            <label class="condition-option">
+                                <input type="radio" name="condition" value="excellent" required>
+                                <div class="condition-card">
+                                    <i class="fas fa-star"></i>
+                                    <h3>Excellent</h3>
+                                    <p>Move-in ready, recently updated</p>
+                                </div>
+                            </label>
+                            <label class="condition-option">
+                                <input type="radio" name="condition" value="good" required>
+                                <div class="condition-card">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <h3>Good</h3>
+                                    <p>Well-maintained, minor updates needed</p>
+                                </div>
+                            </label>
+                            <label class="condition-option">
+                                <input type="radio" name="condition" value="fair" required>
+                                <div class="condition-card">
+                                    <i class="fas fa-tools"></i>
+                                    <h3>Fair</h3>
+                                    <p>Some repairs and updates needed</p>
+                                </div>
+                            </label>
+                            <label class="condition-option">
+                                <input type="radio" name="condition" value="poor" required>
+                                <div class="condition-card">
+                                    <i class="fas fa-wrench"></i>
+                                    <h3>Poor</h3>
+                                    <p>Significant repairs needed</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <div class="step-content">
+                        <h2>When do you need to sell?</h2>
+                        <p class="step-subtitle">We can work with your timeline</p>
+                        <div class="timeline-grid">
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="asap" required>
+                                <div class="timeline-card">
+                                    <i class="fas fa-bolt"></i>
+                                    <h3>ASAP</h3>
+                                    <p>I need to sell immediately</p>
+                                </div>
+                            </label>
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="30-days" required>
+                                <div class="timeline-card">
+                                    <i class="fas fa-calendar-week"></i>
+                                    <h3>30 Days</h3>
+                                    <p>Within the next month</p>
+                                </div>
+                            </label>
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="60-days" required>
+                                <div class="timeline-card">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <h3>60 Days</h3>
+                                    <p>Within 2 months</p>
+                                </div>
+                            </label>
+                            <label class="timeline-option">
+                                <input type="radio" name="timeline" value="flexible" required>
+                                <div class="timeline-card">
+                                    <i class="fas fa-clock"></i>
+                                    <h3>Flexible</h3>
+                                    <p>I have time to wait</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="4">
+                    <div class="step-content">
+                        <h2>Why are you selling?</h2>
+                        <p class="step-subtitle">This helps us understand your situation better</p>
+                        <div class="situation-grid">
+                            <label class="situation-option">
+                                <input type="radio" name="situation" value="foreclosure" required>
+                                <div class="situation-card">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <h3>Avoiding Foreclosure</h3>
+                                </div>
+                            </label>
+                            <label class="situation-option">
+                                <input type="radio" name="situation" value="divorce" required>
+                                <div class="situation-card">
+                                    <i class="fas fa-heart-broken"></i>
+                                    <h3>Divorce</h3>
+                                </div>
+                            </label>
+                            <label class="situation-option">
+                                <input type="radio" name="situation" value="inheritance" required>
+                                <div class="situation-card">
+                                    <i class="fas fa-home"></i>
+                                    <h3>Inherited Property</h3>
+                                </div>
+                            </label>
+                            <label class="situation-option">
+                                <input type="radio" name="situation" value="relocation" required>
+                                <div class="situation-card">
+                                    <i class="fas fa-plane"></i>
+                                    <h3>Job Relocation</h3>
+                                </div>
+                            </label>
+                            <label class="situation-option">
+                                <input type="radio" name="situation" value="financial-distress" required>
+                                <div class="situation-card">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <h3>Financial Difficulties</h3>
+                                </div>
+                            </label>
+                            <label class="situation-option">
+                                <input type="radio" name="situation" value="other" required>
+                                <div class="situation-card">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    <h3>Other Reason</h3>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="5">
+                    <div class="step-content">
+                        <h2>How can we reach you?</h2>
+                        <p class="step-subtitle">We'll contact you within 24 hours with your cash offer</p>
+                        <div class="contact-inputs">
+                            <div class="input-group">
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="validation-message" id="name-validation"></div>
+                            </div>
+                            <div class="input-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
+                                <div class="input-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="validation-message" id="phone-validation"></div>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" name="email" placeholder="Email address" required>
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="validation-message" id="email-validation"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="next-btn" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="6">
+                    <div class="step-content">
+                        <h2>Anything else we should know?</h2>
+                        <p class="step-subtitle">Optional: Tell us more about your situation</p>
+                        <div class="input-group">
+                            <textarea id="comments" name="comments" rows="6" placeholder="Additional details about your property or situation..."></textarea>
+                        </div>
+                        
+                        <div class="final-summary">
+                            <h3>Summary</h3>
+                            <div class="summary-item">
+                                <strong>Property:</strong> <span id="summary-address"></span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Condition:</strong> <span id="summary-condition"></span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Timeline:</strong> <span id="summary-timeline"></span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Situation:</strong> <span id="summary-situation"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="guarantee-badge">
+                            <div class="guarantee-content">
+                                <i class="fas fa-shield-check"></i>
+                                <div>
+                                    <strong>Our Guarantee</strong>
+                                    <p>No obligation • Fair offers • Quick closing</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mini-testimonial">
+                            <div class="mini-testimonial-content">
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?w=50&h=50&fit=crop&crop=face" alt="Recent seller">
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>"Got my cash offer in 18 hours. So easy!"</p>
+                                    <cite>- Sarah M., Baltimore (2 days ago)</cite>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="submit" class="submit-btn-final">
+                            <i class="fas fa-paper-plane"></i> Get My Cash Offer
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <main>
+        <section class="hero-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <h1>Sell Your Maryland House Fast</h1>
+                    <p class="intro-subtitle">Get a cash offer in 24 hours - No repairs, no fees, no hassle</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Houses Bought</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24hrs</span>
+                            <span class="stat-label">Average Response</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">$2M+</span>
+                            <span class="stat-label">Paid to Sellers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Quick Response</h3>
+                        <p>Cash offer within 24 hours of your submission</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>No Repairs Needed</h3>
+                        <p>We buy houses in any condition - no fixes required</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>No Fees</h3>
+                        <p>No real estate agent commissions or hidden costs</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Your Timeline</h3>
+                        <p>Close when it works best for you</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Quick Response</h3>
+                        <p>Cash offer within 24 hours of your submission</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>No Repairs Needed</h3>
+                        <p>We buy houses in any condition - no fixes required</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>No Fees</h3>
+                        <p>No real estate agent commissions or hidden costs</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Your Timeline</h3>
+                        <p>Close when it works best for you</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        </section>
+
+        <section class="process-preview">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Submit Info</h3>
+                        <p>Fill out our simple form with your property details</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Get Offer</h3>
+                        <p>Receive a fair cash offer within 24 hours</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Close Fast</h3>
+                        <p>Close on your timeline - as fast as 7 days</p>
+                    </div>
+                </div>
+                <a href="how-it-works.html" class="learn-more-btn">Learn More About Our Process</a>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Maryland Sellers Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?w=100&h=100&fit=crop&crop=face" alt="Sarah M.">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"They made selling my inherited house so easy. Cash in hand in 3 weeks!"</p>
+                            <cite>Sarah M., Baltimore</cite>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Mike D.">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"No repairs needed, no showings, no stress. Exactly what I needed during my divorce."</p>
+                            <cite>Mike D., Annapolis</cite>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Jennifer L.">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Fair offer and fast closing. They saved my credit from foreclosure."</p>
+                            <cite>Jennifer L., Frederick</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Sell Your House?</h2>
+                    <p>Join hundreds of Maryland homeowners who chose the fast, hassle-free way to sell.</p>
+                    <a href="#" onclick="scrollToTop()" class="cta-button-secondary">Get Your Cash Offer</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Maryland House Buyers</h4>
+                    <p>Licensed real estate investors serving all of Maryland with fast, fair cash offers.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li>Baltimore</li>
+                        <li>Annapolis</li>
+                        <li>Frederick</li>
+                        <li>Rockville</li>
+                        <li>All Maryland Counties</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> (410) 555-CASH</p>
+                    <p><i class="fas fa-envelope"></i> info@mdhousebuyers.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Baltimore, MD</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maryland House Buyers. All rights reserved. Licensed real estate investors.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

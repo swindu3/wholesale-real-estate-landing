@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Maryland House Buyers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-home"></i>
+                <span>Maryland House Buyers</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team today</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Ready to sell your house or have questions about our process? We're here to help.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Call Us</h3>
+                                    <p>(410) 555-CASH</p>
+                                    <p>Mon-Fri: 8AM-7PM<br>Sat-Sun: 9AM-5PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email Us</h3>
+                                    <p>info@mdhousebuyers.com</p>
+                                    <p>We respond within 2 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Visit Us</h3>
+                                    <p>123 Main Street<br>Baltimore, MD 21201</p>
+                                    <p>By appointment only</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="emergency-contact">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Urgent Situations</h3>
+                            <p>Facing foreclosure or need to sell immediately? Call our emergency line:</p>
+                            <a href="tel:4105551234" class="emergency-phone">(410) 555-1234</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" name="contactName" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactPhone">Phone Number *</label>
+                                    <input type="tel" id="contactPhone" name="contactPhone" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactEmail">Email Address *</label>
+                                    <input type="email" id="contactEmail" name="contactEmail" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject">
+                                    <option value="">Select a topic</option>\n                                    <option value="cash-offer">I want a cash offer</option>\n                                    <option value="questions">I have questions</option>\n                                    <option value="urgent">Urgent situation</option>\n                                    <option value="other">Other</option>\n                                </select>\n                            </div>\n                            \n                            <div class=\"form-group\">\n                                <label for=\"contactMessage\">Message *</label>\n                                <textarea id=\"contactMessage\" name=\"contactMessage\" rows=\"6\" placeholder=\"Tell us about your situation or ask us any questions...\" required></textarea>\n                            </div>\n                            \n                            <button type=\"submit\" class=\"submit-btn\">Send Message</button>\n                            \n                            <p class=\"privacy-notice\">\n                                Your information is secure and will never be shared. We respect your privacy.\n                            </p>\n                        </form>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <section class=\"service-areas\">\n            <div class=\"container\">\n                <h2 class=\"section-title\">We Buy Houses Throughout Maryland</h2>\n                <div class=\"areas-grid\">\n                    <div class=\"area-column\">\n                        <h3>Central Maryland</h3>\n                        <ul>\n                            <li>Baltimore City</li>\n                            <li>Baltimore County</li>\n                            <li>Anne Arundel County</li>\n                            <li>Howard County</li>\n                            <li>Carroll County</li>\n                        </ul>\n                    </div>\n                    <div class=\"area-column\">\n                        <h3>Northern Maryland</h3>\n                        <ul>\n                            <li>Frederick County</li>\n                            <li>Washington County</li>\n                            <li>Allegany County</li>\n                            <li>Garrett County</li>\n                            <li>Cecil County</li>\n                        </ul>\n                    </div>\n                    <div class=\"area-column\">\n                        <h3>Washington Metro</h3>\n                        <ul>\n                            <li>Montgomery County</li>\n                            <li>Prince George's County</li>\n                            <li>Charles County</li>\n                            <li>Calvert County</li>\n                            <li>St. Mary's County</li>\n                        </ul>\n                    </div>\n                    <div class=\"area-column\">\n                        <h3>Eastern Shore</h3>\n                        <ul>\n                            <li>Talbot County</li>\n                            <li>Queen Anne's County</li>\n                            <li>Kent County</li>\n                            <li>Caroline County</li>\n                            <li>Dorchester County</li>\n                        </ul>\n                    </div>\n                </div>\n                <p class=\"areas-note\">Don't see your area listed? We buy houses throughout Maryland. <a href=\"#contactForm\">Contact us</a> to discuss your property.</p>\n            </div>\n        </section>\n    </main>\n\n    <footer>\n        <div class=\"container\">\n            <div class=\"footer-content\">\n                <div class=\"footer-section\">\n                    <h4>Maryland House Buyers</h4>\n                    <p>Licensed real estate investors serving all of Maryland with fast, fair cash offers.</p>\n                    <div class=\"social-links\">\n                        <a href=\"#\"><i class=\"fab fa-facebook\"></i></a>\n                        <a href=\"#\"><i class=\"fab fa-instagram\"></i></a>\n                        <a href=\"#\"><i class=\"fab fa-linkedin\"></i></a>\n                    </div>\n                </div>\n                <div class=\"footer-section\">\n                    <h4>Quick Links</h4>\n                    <ul>\n                        <li><a href=\"index.html\">Home</a></li>\n                        <li><a href=\"how-it-works.html\">How It Works</a></li>\n                        <li><a href=\"about.html\">About Us</a></li>\n                        <li><a href=\"contact.html\">Contact</a></li>\n                    </ul>\n                </div>\n                <div class=\"footer-section\">\n                    <h4>Service Areas</h4>\n                    <ul>\n                        <li>Baltimore</li>\n                        <li>Annapolis</li>\n                        <li>Frederick</li>\n                        <li>Rockville</li>\n                        <li>All Maryland Counties</li>\n                    </ul>\n                </div>\n                <div class=\"footer-section\">\n                    <h4>Contact Info</h4>\n                    <p><i class=\"fas fa-phone\"></i> (410) 555-CASH</p>\n                    <p><i class=\"fas fa-envelope\"></i> info@mdhousebuyers.com</p>\n                    <p><i class=\"fas fa-map-marker-alt\"></i> Baltimore, MD</p>\n                </div>\n            </div>\n            <div class=\"footer-bottom\">\n                <p>&copy; 2024 Maryland House Buyers. All rights reserved. Licensed real estate investors.</p>\n            </div>\n        </div>\n    </footer>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
