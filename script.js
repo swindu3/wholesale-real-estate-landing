@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const formExitBtn = document.getElementById('formExitBtn');
     
     let currentStep = 1;
-    const totalSteps = 6;
+    const totalSteps = 8;
     const formData = {};
     let isInTypeformMode = true;
     
@@ -193,6 +193,62 @@ document.addEventListener('DOMContentLoaded', function() {
                 checkContactStep();
             });
         }
+        
+        // Add scale option handling for commitment step
+        document.querySelectorAll('.scale-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const input = this.querySelector('input');
+                input.checked = true;
+                
+                const step = this.closest('.form-step');
+                const nextBtn = step.querySelector('.next-btn');
+                if (nextBtn) {
+                    nextBtn.disabled = false;
+                }
+                
+                const value = parseInt(input.value);
+                let commitmentFeedback = document.querySelector('.commitment-feedback');
+                if (!commitmentFeedback) {
+                    const feedback = document.createElement('div');
+                    feedback.className = 'commitment-feedback';
+                    this.closest('.step-content').appendChild(feedback);
+                    commitmentFeedback = feedback;
+                }
+                
+                if (value >= 8) {
+                    commitmentFeedback.innerHTML = 
+                        '<div class="feedback-high"><i class="fas fa-star"></i> Excellent! You\'re ready to take action. We\'ll prioritize your situation and ensure you get our best offer.</div>';
+                } else if (value >= 5) {
+                    commitmentFeedback.innerHTML = 
+                        '<div class="feedback-medium"><i class="fas fa-clock"></i> We understand. Let\'s see how we can help move things forward at your pace.</div>';
+                } else {
+                    commitmentFeedback.innerHTML = 
+                        '<div class="feedback-low"><i class="fas fa-info-circle"></i> No pressure at all. We\'ll provide information to help you make the right decision when you\'re ready.</div>';
+                }
+            });
+        });
+        
+        setTimeout(() => {
+            updateSocialProofTicker();
+        }, 5000);
+    }
+    
+    function updateSocialProofTicker() {
+        const ticker = document.querySelector('.recent-activity span');
+        const activities = [
+            'Mike from Annapolis just submitted - 3 minutes ago',
+            'Jennifer from Frederick received her offer - 1 hour ago',
+            'David from Baltimore just closed - 2 hours ago',
+            'Lisa from Rockville got $89,000 cash - 4 hours ago'
+        ];
+        
+        let currentIndex = 0;
+        setInterval(() => {
+            if (ticker) {
+                currentIndex = (currentIndex + 1) % activities.length;
+                ticker.textContent = activities[currentIndex];
+            }
+        }, 8000);
     }
     
     function validateCurrentStep() {
@@ -253,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             setTimeout(() => {
                 const firstInput = document.querySelector(`[data-step="${currentStep}"] input:first-of-type`);
-                if (firstInput && currentStep === 5) {
+                if (firstInput && currentStep === 7) {
                     firstInput.focus();
                 }
             }, 300);
@@ -355,10 +411,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function checkContactStep() {
-        const nameInput = document.querySelector('[data-step="5"] input[name="name"]');
-        const phoneInput = document.querySelector('[data-step="5"] input[name="phone"]');
-        const emailInput = document.querySelector('[data-step="5"] input[name="email"]');
-        const nextBtn = document.querySelector('[data-step="5"] .next-btn');
+        const nameInput = document.querySelector('[data-step="7"] input[name="name"]');
+        const phoneInput = document.querySelector('[data-step="7"] input[name="phone"]');
+        const emailInput = document.querySelector('[data-step="7"] input[name="email"]');
+        const nextBtn = document.querySelector('[data-step="7"] .next-btn');
         
         if (nameInput && phoneInput && emailInput && nextBtn) {
             const nameValid = nameInput.value.trim().length >= 2;
@@ -383,13 +439,21 @@ document.addEventListener('DOMContentLoaded', function() {
             summaryCondition.textContent = 
                 formData.condition ? formData.condition.charAt(0).toUpperCase() + formData.condition.slice(1) : '';
         }
-        if (summaryTimeline) {
-            summaryTimeline.textContent = 
-                formData.timeline ? formatTimelineText(formData.timeline) : '';
+        
+        const summaryMotivation = document.getElementById('summary-motivation');
+        const summaryUrgency = document.getElementById('summary-urgency');
+        const summaryCommitment = document.getElementById('summary-commitment');
+        
+        if (summaryMotivation) {
+            summaryMotivation.textContent = 
+                formData.motivation ? formatMotivationText(formData.motivation) : '';
         }
-        if (summarySituation) {
-            summarySituation.textContent = 
-                formData.situation ? formatSituationText(formData.situation) : '';
+        if (summaryUrgency) {
+            summaryUrgency.textContent = 
+                formData.urgency ? formatUrgencyText(formData.urgency) : '';
+        }
+        if (summaryCommitment) {
+            summaryCommitment.textContent = formData.commitment || '';
         }
     }
     
@@ -403,27 +467,55 @@ document.addEventListener('DOMContentLoaded', function() {
         return timelineMap[timeline] || timeline;
     }
     
-    function formatSituationText(situation) {
-        const situationMap = {
-            'foreclosure': 'Avoiding Foreclosure',
-            'divorce': 'Divorce',
-            'inheritance': 'Inherited Property',
-            'relocation': 'Job Relocation',
-            'financial-distress': 'Financial Difficulties',
-            'other': 'Other Reason'
+    function formatMotivationText(motivation) {
+        const motivationMap = {
+            'financial-stress': 'Financial Pressure',
+            'life-change': 'Major Life Change',
+            'inherited-burden': 'Inherited Property Burden',
+            'time-pressure': 'Time Crunch',
+            'property-burden': 'Property Maintenance Issues',
+            'other': 'Other Situation'
         };
-        return situationMap[situation] || situation;
+        return motivationMap[motivation] || motivation;
+    }
+    
+    function formatUrgencyText(urgency) {
+        const urgencyMap = {
+            'immediate': 'Extremely Urgent',
+            'soon': 'Soon (2-4 weeks)',
+            'flexible': 'Somewhat Flexible',
+            'exploring': 'Just Exploring'
+        };
+        return urgencyMap[urgency] || urgency;
     }
     
     function submitMultiStepLead() {
         saveCurrentStepData();
         
+        const urgencyLevel = formData.urgency;
+        const commitmentLevel = parseInt(formData.commitment);
+        
+        let responseMessage = 'Thank you! We\'ve received your information.';
+        
+        if (urgencyLevel === 'immediate' || commitmentLevel >= 8) {
+            responseMessage = 'PRIORITY SUBMISSION: Given your urgent situation, we\'re fast-tracking your case. Expect a call within 2 hours with your cash offer.';
+        } else if (urgencyLevel === 'soon' || commitmentLevel >= 6) {
+            responseMessage = 'Thank you! Based on your timeline, we\'ll contact you within 12 hours with a personalized cash offer.';
+        } else {
+            responseMessage = 'Thank you! We\'ll send you helpful information and follow up within 24 hours when you\'re ready.';
+        }
+        
         showMultiStepMessage('Submitting your information...', 'info');
         
-        console.log('Multi-step lead data:', formData);
+        console.log('NEPQ-optimized lead data:', {
+            ...formData,
+            leadScore: calculateLeadScore(formData),
+            urgencyLevel: urgencyLevel,
+            commitmentLevel: commitmentLevel
+        });
         
         setTimeout(() => {
-            showMultiStepMessage('Thank you! We\'ve received your information and will contact you within 24 hours with a cash offer.', 'success');
+            showMultiStepMessage(responseMessage, 'success');
             multiStepForm.reset();
             currentStep = 1;
             document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
@@ -431,6 +523,24 @@ document.addEventListener('DOMContentLoaded', function() {
             updateProgressBar();
             updateStepCounter();
         }, 2000);
+    }
+    
+    function calculateLeadScore(data) {
+        let score = 0;
+        
+        if (data.urgency === 'immediate') score += 40;
+        else if (data.urgency === 'soon') score += 30;
+        else if (data.urgency === 'flexible') score += 15;
+        
+        if (data.consequences && data.consequences !== 'no-consequences') score += 25;
+        
+        const commitment = parseInt(data.commitment) || 0;
+        score += commitment * 3;
+        
+        if (data.motivation === 'financial-stress') score += 20;
+        else if (data.motivation === 'life-change') score += 15;
+        
+        return Math.min(score, 100);
     }
     
     function showMultiStepMessage(message, type) {

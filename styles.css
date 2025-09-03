@@ -459,6 +459,202 @@ body {
     font-weight: 500;
 }
 
+.pain-card {
+    border-left: 4px solid #e74c3c;
+}
+
+.urgency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.urgency-card {
+    background: #fafafa;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.urgency-card.high-urgency {
+    border-left: 4px solid #e74c3c;
+}
+
+.urgency-card.medium-urgency {
+    border-left: 4px solid #f39c12;
+}
+
+.urgency-card.low-urgency {
+    border-left: 4px solid #f1c40f;
+}
+
+.urgency-card.no-urgency {
+    border-left: 4px solid #95a5a6;
+}
+
+.consequence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.consequence-card {
+    background: #fafafa;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 4px solid #e74c3c;
+}
+
+.consequence-card:hover {
+    border-color: #e74c3c;
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.1);
+}
+
+.consequence-option input:checked + .consequence-card {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border-color: #e74c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+}
+
+.consequence-card i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #e74c3c;
+}
+
+.consequence-option input:checked + .consequence-card i {
+    color: white;
+}
+
+.consequence-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.consequence-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.commitment-scale {
+    text-align: center;
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.scale-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.scale-option {
+    cursor: pointer;
+    flex: 1;
+}
+
+.scale-option input {
+    display: none;
+}
+
+.scale-number {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background: white;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.scale-option:hover .scale-number {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+.scale-option input:checked + .scale-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+    transform: scale(1.1);
+}
+
+.scale-option[data-value="8"] input:checked + .scale-number,
+.scale-option[data-value="9"] input:checked + .scale-number,
+.scale-option[data-value="10"] input:checked + .scale-number {
+    background: linear-gradient(135deg, #27ae60, #229954);
+    border-color: #27ae60;
+}
+
+.commitment-feedback {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.feedback-high {
+    background: linear-gradient(135deg, #27ae60, #229954);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.feedback-medium {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.feedback-low {
+    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.feedback-high i,
+.feedback-medium i,
+.feedback-low i {
+    margin-right: 8px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -538,6 +734,84 @@ body {
 .trust-item i {
     color: #27ae60;
     font-size: 1rem;
+}
+
+.urgency-indicator {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    animation: pulse 2s infinite;
+}
+
+.urgency-indicator i {
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.urgency-notice {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border: 2px solid #e67e22;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px rgba(243, 156, 18, 0.3); }
+    to { box-shadow: 0 0 20px rgba(243, 156, 18, 0.6); }
+}
+
+.urgency-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.urgency-content i {
+    font-size: 1.2rem;
+    animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.social-proof-ticker {
+    background: #e8f5e8;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.recent-activity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #155724;
+}
+
+.activity-dot {
+    color: #28a745;
+    font-size: 0.6rem;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
 
 .navbar .container {
@@ -1155,6 +1429,26 @@ footer {
     .situation-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+    
+    .urgency-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .consequence-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .scale-options {
+        gap: 8px;
+    }
+    
+    .scale-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
     }
     
     .condition-card,
